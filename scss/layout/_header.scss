@@ -1,0 +1,169 @@
+.header {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   .headerMenu {
+      display: none;
+   }
+   .openbtn {
+      display: none;
+   }
+   .container {
+      display: flex;
+      justify-content: space-between;
+      max-height: 80px;
+      padding: 0 30px;
+      transition: all 1s linear 0s;
+
+      > a {
+         width: 24%;
+         img {
+            height: 100%;
+         }
+      }
+      .navbarContent {
+         display: flex;
+         align-items: center;
+
+         .navbarSub {
+            a {
+               margin-right: $spacing-2;
+               font-size: $fs-2;
+               font-weight: $fw-semiBold;
+               color: $c-black;
+               text-decoration: none;
+               &:hover {
+                  @include styleText($c-pink, 13px, $fw-semiBold);
+               }
+            }
+         }
+         .navbarContact {
+            text-decoration: none;
+            border: 1px solid $c-pink;
+            border-radius: 25px;
+            padding: 10.8px 20.25px;
+            font-size: $fs-3;
+            box-shadow: 0 0 0 30px #b61984 inset;
+            color: white;
+            @include styleText(white, 13.5px, $fw-semiBold);
+            transition: all 0.3s ease-out;
+            &:hover {
+               box-shadow: 0 0 0 0px #b61984 inset;
+               @include styleText($c-pink, 13.5px, $fw-semiBold);
+            }
+         }
+         .navbarSocial {
+            a {
+               color: $c-black;
+               transition: 0.4s;
+               font-size: $fs-4;
+               margin-left: 9px;
+               &:hover {
+                  color: $c-pink;
+               }
+            }
+         }
+      }
+   }
+}
+
+@media screen and (max-width: 1200px) {
+   .header {
+      display: flex;
+      background: white !important;
+      box-shadow: 1px 1px 10px rgba(0,0,0 , 0.1);
+      .closebtn {
+         visibility: hidden;
+      }
+      .openbtn {
+         display: block;
+         margin-left:30px;
+         margin-right: 15px ;
+      }
+      .headerMenu {
+         display: block;
+         .navbarMain {
+            width: 0;
+            height: 100%;          
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-x: hidden;
+            transition: 0.5s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .navbarContact {
+               text-decoration: none;
+               border: 1px solid $c-pink;
+               border-radius: 25px;
+               padding: 10.8px 20.25px;
+               font-size: $fs-3;
+               box-shadow: 0 0 0 30px #b61984 inset;
+               margin-top: 30px;
+               color: white;
+               @include styleText(white, 13.5px, $fw-semiBold);
+               transition: all 0.3s ease-out;
+               &:hover {
+                  box-shadow: 0 0 0 0px #b61984 inset;
+                  @include styleText($c-pink, 13.5px, $fw-semiBold);
+               }
+            }
+         }
+      
+         .navbarMain a {
+            font-size: $fs-2;
+            font-weight: $fw-semiBold;
+            color: $c-black;
+            text-decoration: none;
+            margin-bottom: 20px;
+            &:hover {
+               @include styleText($c-pink, 13px, $fw-semiBold);
+            }
+         }
+
+         .navbarMain a:hover {
+            color: #f1f1f1;
+         }
+
+         .navbarMain .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: $fs-8;
+            margin-left: 50px;
+         }
+
+         #main {
+            transition: margin-left 0.5s;
+            padding: 16px;
+         }
+         .navbarSocial {
+            a {
+               padding:0 3px;
+            }
+         }
+      }
+      .container {
+         width: 100%;
+         padding: 0;
+         margin: 0;
+         > a {
+            img {
+               width: 48px;
+               height: 48px;
+            }
+         }
+         .navbarContent {
+            display: none;
+         }
+      }
+   }
+}
+
+#main {
+   transition: all 0.4s linear;
+}
